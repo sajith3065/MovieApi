@@ -1,0 +1,20 @@
+
+<div class="container fluid text-center mt-5 w-50">
+<!-- heading -->
+<h1>Movie Details</h1>
+<!-- input -->
+<!-- here, we use ngModel to bind data -->
+<input type="text" [(ngModel)]="movieName" class="form-control"  placeholder="Enter Movie Name" id="exampleInputPassword1">
+<!-- here, we use event click  and call searchMovie-->
+<button (click)="searchMovie(movieName)" type="button" class="btn btn-success mt-2">Search Movie</button>
+<!-- here, we displays the details of the movie -->
+<div *ngIf="movieDetails">
+  <h2>Title: {{ movieDetails.Title }}</h2>
+  <p>Released Date: {{ movieDetails.Released }}</p>
+  <p>Actors: {{ movieDetails.Actors }}</p>
+  <p>Plot: {{ movieDetails.Plot }}</p>
+  <p>Ratings: {{ movieDetails.Ratings[0].Value }}</p>
+  <img [src]="movieDetails.Poster" alt="{{ movieDetails.Title }}" />
+</div>
+
+</div>
